@@ -23,4 +23,4 @@ const useFetch = (url: string) => {
     return { data, isLoading, error }
 }
 
-export default useFetch;
+export { useFetch }
