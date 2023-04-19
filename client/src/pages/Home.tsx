@@ -1,11 +1,10 @@
 import React from "react"
 import { useFetch } from "../hooks/useFetch"
-
 import { ProductSlider } from "../components"
 
 function Home() {
 
-  const { data } = useFetch("/products?populate=*&filters[isNew]=true")
+  const { data }: any = useFetch("/products?populate=*&filters[isNew]=true")
 
   return (
     <div className="mb-16">
