@@ -16,7 +16,7 @@ function ProductSlider({data}: ProductSliderProps) {
   console.log(data)
 
   return (
-    <Swiper modules={[Pagination, Navigation]} loop={true} navigation={true} breakpoints={{
+    <Swiper modules={[Pagination, Navigation]} loop={false} navigation={true} breakpoints={{
       320: {
         slidesPerView: 1,
         spaceBetween: 30
