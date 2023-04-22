@@ -12,9 +12,15 @@ function CategoryNav() {
     <aside>
       <div className="bg-primary flex flex-col w-[286px] h-[500px] rounded-[8px] overflow-hidden">
         <div className="bg-accent py-4 text-primary uppercase font-semibold flex items-center justify-center">Browse Categories</div>
-        <div className="flex flex-col gap-y-6 p-6">
+        <div className="flex flex-col gap-y-6 p-4 pt-6">
           {data?.map((category: any) => (
-          <Link to="">Category</Link>
+          <Link 
+            className="cursor-pointer uppercase hover:text-slate-400 w-fit px-2 pr-4 duration-200"
+            to={`/products/${category.id}`} 
+            key={category.id}
+            >
+            {category.attributes.title}
+          </Link>
           ))}
         </div>
       </div>  
