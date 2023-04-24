@@ -1,6 +1,10 @@
 import React from 'react'
 
-function CategoryNavMobile() {
+interface NavMobileProps {
+  setNavMobile: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function CategoryNavMobile({setNavMobile}: NavMobileProps) {
   return (
     <div>CategoryNavMobile</div>
   )
