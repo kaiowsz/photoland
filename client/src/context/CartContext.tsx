@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState, createContext } from "react"
+import { CartContextType } from "../@types/CartContextType"
 
-function CartContext() {
+export const CartContext = createContext<CartContextType | null>(null)
+
+function CartProvider({children}: any) {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+
   return (
-    <div>CartContext</div>
+    <CartContext.Provider value={{isOpen, setIsOpen }}>
+      {children}
+    </CartContext.Provider>
   )
 }
 
-export default CartContext
+export default CartProvider
