@@ -19,7 +19,7 @@ function Header() {
   return (
     <header className="bg-primary py-6 fixed w-full top-0 z-40 lg:relative xl:mb-[30px]">
       <div className="container mx-auto">
-        <div className="flex flex-row gap-4 lg:items-center justify-between mb-4 lg:mb-0">
+        <div className="flex flex-row gap-4 lg:items-center justify-between mb-4 xl:mb-0">
           {""}
           <div onClick={() => setNavMobile(true)} className="text-3xl xl:hidden cursor-pointer">
             <FiMenu />
@@ -36,11 +36,11 @@ function Header() {
             <SearchForm />
           </div>
 
-          <div>
-            <div>Need help? 211 443 553</div>
+          <div className="flex items-center gap-x-[10px]">
+            <div className="hidden xl:flex uppercase">Need help? 211 443 553</div>
             <div onClick={() => setIsOpen(!isOpen)} className="relative cursor-pointer">
               <SlBag className="text-2xl" />
-              <div>2</div>
+              <div className="bg-accent text-primary absolute w-[18px] h-[18px] rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold tracking-[-0.1rem]">32</div>
             </div>
 
             <div className={`
@@ -52,7 +52,7 @@ function Header() {
 
         </div>
 
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <SearchForm  />
         </div>
       </div>
