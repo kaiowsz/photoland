@@ -6,7 +6,7 @@ import "swiper/css/navigation"
 import "../slider.css"
 import { Pagination, Navigation } from "swiper"
 import Product from "../components/Product"
-import { ProductType } from "../types/ProductType"
+import { ProductType } from "../@types/ProductType"
 
 interface ProductSliderProps {
   data: ProductType[]

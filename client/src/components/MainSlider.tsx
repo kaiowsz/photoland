@@ -5,7 +5,7 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import "../slider.css"
 import { Pagination } from "swiper"
-import { ProductType } from "../types/ProductType"
+import { ProductType } from "../@types/ProductType"
 import CameraImg from "../img/camera.png"
 
 const sliderData = [

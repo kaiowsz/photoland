@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { ProductType } from "../types/ProductType"
+import { ProductType } from "../@types/ProductType"
 
 interface ProductProps {
   product: ProductType;

@@ -1,7 +1,7 @@
 import React from "react"
 import { FiX } from "react-icons/fi"
 import { useFetch } from "../hooks/useFetch"
-import { ProductType } from "../types/ProductType"
+import { ProductType } from "../@types/ProductType"
 import { Link } from "react-router-dom"
 
 interface NavMobileProps {
