@@ -15,13 +15,21 @@ function Search() {
   console.log(data)
 
   return (
-    <div>
+    <div className="mb-[30px] pt-40 xl:pt-0 lg:pt-4">
       <div className="container mx-auto">
-        <div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[15px] md:gap-[30px]">
-            {data && data.map((product: ProductType) => (
-              <Product product={product} key={product.id} />
-            ))}
+        <div className="flex gap-x-[30px]">
+          <CategoryNav />
+          <div>
+            <div className="py-3 text-xl text-center lg:text-left">
+              {data?.length > 0 ? `${data.length} results for ${searchTerm}` : `No results found for ${searchTerm}`}
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[15px] md:gap-[30px]">
+              {data && data.map((product: ProductType) => (
+                <Product product={product} key={product.id} />
+              ))}
+            </div>
+
           </div>
         </div>
       </div>

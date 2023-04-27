@@ -7,6 +7,8 @@ interface ProductProps {
 }
 
 function Product({product}: ProductProps) {
+
+  console.log(product)
   return (
     <Link to={`/product/${product.id}`}>
       <div className="grad w-full h-[362px] rounded-[8px] overflow-hidden relative group">
@@ -26,7 +28,7 @@ function Product({product}: ProductProps) {
         {/* text here */}
         <div className="px-6 pb-8 flex flex-col">
           <div className="text-sm text-accent capitalize mb-2">
-            {product.attributes.categories.data[0].attributes.title}
+            {product.attributes.categories.data[0]?.attributes.title}
           </div>
 
           <div className="text-[15px] mb-4 lg:mb-9">
