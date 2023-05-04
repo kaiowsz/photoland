@@ -16,6 +16,7 @@ function RelatedProducts({categoryTitle}: {categoryTitle: string}) {
         <h2 className="h2 mb-6 text-center xl:text-left">Related Products</h2>
         <ProductSlider data={data} />
       </div>
+      
     </div>
   )
 }

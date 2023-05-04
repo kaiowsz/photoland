@@ -5,7 +5,7 @@ import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Search from "./pages/Search";
 
-import { Header, Footer, } from "./components";
+import { Header, Footer } from "./components";
 
 function Layout() {
   return (
