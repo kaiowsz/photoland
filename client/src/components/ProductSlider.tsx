@@ -13,7 +13,6 @@ interface ProductSliderProps {
 }
 
 function ProductSlider({data}: ProductSliderProps) {
-  console.log(data)
 
   return (
     <Swiper modules={[Pagination, Navigation]} loop={false} navigation={true} breakpoints={{

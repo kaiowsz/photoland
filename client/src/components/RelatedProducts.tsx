@@ -8,8 +8,6 @@ function RelatedProducts({categoryTitle}: {categoryTitle: string}) {
 
   const {data}: { data: ProductType[] } = useFetch(`/products?populate=*&filters[categories][title]=${categoryTitle}`)
 
-  console.log(data)
-
   return (
     <div className="mb-16">
       <div className="container mx-auto">
