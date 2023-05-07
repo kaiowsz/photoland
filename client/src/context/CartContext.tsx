@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react"
+import React, { useState, createContext, useEffect } from "react"
 import { CartContextType } from "../@types/CartContextType"
 
 export const CartContext = createContext<CartContextType | null>(null)
@@ -9,6 +9,15 @@ function CartProvider({children}: any) {
   const [itemsAmount, setItemsAmount] = useState<number>(0)
   const [amount, setAmount] = useState<number>(0)
   const [total, setTotal] = useState<number>(0)
+
+  useEffect(() => {
+    const amount = cart.reduce((a, c) => {
+      return a + c.amount;
+    })
+
+    
+  })
+  
 
   function addToCart(item: any, id: string | number | undefined) {
     const itemID = Number(id)
@@ -38,9 +47,15 @@ function CartProvider({children}: any) {
     setIsOpen(true)
   }
 
+  function removeFromCart(id: string | number | undefined) {
+    const newCart = cart.filter((item: any) => {
+      return item.id !== id
+    })
+    setCart(newCart)
+  }
 
   return (
-    <CartContext.Provider value={{isOpen, setIsOpen, addToCart }}>
+    <CartContext.Provider value={{isOpen, setIsOpen, addToCart, cart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   )
