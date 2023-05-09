@@ -15,9 +15,7 @@ function CartProvider({children}: any) {
       return a + c.amount;
     }, 0)
 
-    console.log(amount)
-
-    
+    setItemsAmount(amount)
   }, [cart])
   
 
@@ -56,8 +54,54 @@ function CartProvider({children}: any) {
     setCart(newCart)
   }
 
+  function handleInput(event: any, id: string | number | undefined) {
+    const value = parseInt(event.target.value)
+    const cartItem = cart.find((item) => {
+      return item.id === id
+    })
+
+    if(cartItem) {
+      const newCart = cart.map(item => {
+        if(item.id === id) {
+          if(isNaN(value)) {
+            setAmount(1)
+            return {...item, amount: 1}
+          } else {
+            setAmount(value)
+            return {...item, amount: value}
+          }
+        } else {
+          return item
+        }
+      })
+
+      setCart(newCart)
+    }
+    setIsOpen(true)
+  }
+
+  function handleSelect(event: any, id: string | number | undefined) {
+    const value = event.target.value
+    const cartItem = cart.find(item => {
+      return item.id === id
+    })
+
+    if(cartItem) {
+      const newCart = [...cart].map(item => {
+        if(item.id === id) {
+          setAmount(value)
+          return { ...item, amount: value }
+        } else {
+          return item
+        }
+      })
+
+      setCart(newCart)
+    }
+  }
+
   return (
-    <CartContext.Provider value={{isOpen, setIsOpen, addToCart, cart, removeFromCart }}>
+    <CartContext.Provider value={{isOpen, setIsOpen, addToCart, cart, removeFromCart, itemsAmount, handleInput, handleSelect }}>
       {children}
     </CartContext.Provider>
   )

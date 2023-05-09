@@ -7,8 +7,6 @@ interface ProductProps {
 }
 
 function Product({product}: ProductProps) {
-
-  console.log(product)
   return (
     <Link to={`/product/${product.id}`}>
       <div className="grad w-full h-[362px] rounded-[8px] overflow-hidden relative group">
