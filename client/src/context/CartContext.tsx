@@ -17,6 +17,14 @@ function CartProvider({children}: any) {
 
     setItemsAmount(amount)
   }, [cart])
+
+  useEffect(() => {
+    const total = cart.reduce((a, c) => {
+      return a + c.attributes.price * c.amount
+    }, 0)
+
+    setTotal(total)
+  }, [cart])
   
 
   function addToCart(item: any, id: string | number | undefined) {
@@ -81,7 +89,7 @@ function CartProvider({children}: any) {
   }
 
   function handleSelect(event: any, id: string | number | undefined) {
-    const value = event.target.value
+    const value = parseInt(event.target.value)
     const cartItem = cart.find(item => {
       return item.id === id
     })
@@ -101,7 +109,7 @@ function CartProvider({children}: any) {
   }
 
   return (
-    <CartContext.Provider value={{isOpen, setIsOpen, addToCart, cart, removeFromCart, itemsAmount, handleInput, handleSelect }}>
+    <CartContext.Provider value={{isOpen, setIsOpen, addToCart, cart, removeFromCart, itemsAmount, handleInput, handleSelect, total }}>
       {children}
     </CartContext.Provider>
   )

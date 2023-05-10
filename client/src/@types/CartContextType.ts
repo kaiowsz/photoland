@@ -9,4 +9,5 @@ export interface CartContextType {
     removeFromCart: (id: string | number | undefined) => void;
     handleInput: handleFunction;
     handleSelect: handleFunction;
+    total: number;
 }

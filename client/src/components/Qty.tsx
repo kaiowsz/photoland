@@ -9,7 +9,7 @@ function Qty({item} : {item: any}) {
 
   return (
     <div className="flex gap-x-6 items-center text-primary ">
-      { item.amount > 10 
+      { item.amount < 10 
       ? <select onChange={(e) => handleSelect(e, item.id)} value={item.amount} className="p-2 rounded-lg w-[100px] h-12 outline-none text-primary">
         <option value="1">1</option>
         <option value="2">2</option>
