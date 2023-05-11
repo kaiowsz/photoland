@@ -10,4 +10,5 @@ export interface CartContextType {
     handleInput: handleFunction;
     handleSelect: handleFunction;
     total: number;
+    clearCart: () => void;
 }
