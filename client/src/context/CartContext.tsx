@@ -7,7 +7,6 @@ function CartProvider({children}: any) {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [cart, setCart] = useState<any[]>([])
   const [itemsAmount, setItemsAmount] = useState<number>(0)
-  const [amount, setAmount] = useState<number>(0)
   const [total, setTotal] = useState<number>(0)
 
   useEffect(() => {
@@ -40,7 +39,6 @@ function CartProvider({children}: any) {
       
       const newCart = cart.map((item: any) => {
         if(item.id === itemID) {
-          setAmount(cartItem.amount + 1)
           return {...item, amount: cartItem.amount + 1}
         } else {
           return item
@@ -63,7 +61,13 @@ function CartProvider({children}: any) {
   }
 
   function handleInput(event: any, id: string | number | undefined) {
-    const value = parseInt(event.target.value)
+    
+    let value = parseInt(event.target.value)
+
+    if(value == 0) {
+      value = 1
+    }
+
     const cartItem = cart.find((item) => {
       return item.id === id
     })
@@ -72,10 +76,8 @@ function CartProvider({children}: any) {
       const newCart = cart.map(item => {
         if(item.id === id) {
           if(isNaN(value)) {
-            setAmount(1)
             return {...item, amount: 1}
           } else {
-            setAmount(value)
             return {...item, amount: value}
           }
         } else {
@@ -97,7 +99,6 @@ function CartProvider({children}: any) {
     if(cartItem) {
       const newCart = [...cart].map(item => {
         if(item.id === id) {
-          setAmount(value)
           return { ...item, amount: value }
         } else {
           return item
