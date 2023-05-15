@@ -8,6 +8,8 @@ import { Pagination } from "swiper"
 import { ProductType } from "../@types/ProductType"
 import CameraImg from "../img/camera.png"
 
+import { Link } from "react-router-dom"
+
 const sliderData = [
   {
     img: CameraImg,
@@ -16,22 +18,25 @@ const sliderData = [
     titlePart2: "On your",
     titlePart3: "first order",
     btnText: "Shop now",
+    linkTo: "/products/1"
   },
   {
     img: CameraImg,
-    pretitle: "Special offer",
-    titlePart1: "Save 20%",
-    titlePart2: "On your",
-    titlePart3: "first order",
+    pretitle: "Professionals",
+    titlePart1: "Check Our",
+    titlePart2: "Professional",
+    titlePart3: "Cameras",
     btnText: "Shop now",
+    linkTo: "/products/5"
   },
   {
     img: CameraImg,
-    pretitle: "Special offer",
-    titlePart1: "Save 20%",
-    titlePart2: "On your",
-    titlePart3: "first order",
-    btnText: "Shop now",
+    pretitle: "Film cameras",
+    titlePart1: "The best",
+    titlePart2: "Film cameras",
+    titlePart3: "of the market",
+    btnText: "Buy now",
+    linkTo: "/products/4"
   },
 ]
 
@@ -52,7 +57,7 @@ function MainSlider() {
                   {slide.titlePart2} <br />
                   {slide.titlePart3}
                 </div>
-                <button className="btn btn-accent mx-auto lg:mx-0">Shop Now</button>
+                <Link to={slide.linkTo} className="btn btn-accent mx-auto lg:mx-0 w-fit">{slide.btnText}</Link>
               </div>
 
               <div className="flex-1">
