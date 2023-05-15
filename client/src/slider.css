@@ -18,3 +18,13 @@
     padding: 2rem;
     width: 200px;
 }
+
+::-webkit-scrollbar {
+    cursor: pointer;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background:#F6CD46;
+    border-radius: 20px;
+}
