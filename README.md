@@ -8,7 +8,7 @@
 
 ### 🛠️ About this project
 
-This project is a full-stack e-commerce that sells cameras online with payment. Created using technologies on the front-end such as React and for the back-end some of the technologies is Stripe (payment methods), Strapi (CMS).
+Photoland is a full-stack e-commerce that sells cameras online with payment. Created using technologies on the front-end such as React and for the back-end some of the technologies is Stripe (payment methods), Strapi (CMS).
 
 ### 💻 Technologies used
 
